@@ -3,6 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/VueTable.umd.cjs",
+  "module": "./dist/VueTable.js",
+  "exports": {
+    ".": {
+      "import": "./dist/VueTable.js",
+      "require": "./dist/VueTable.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
