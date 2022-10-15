@@ -2,19 +2,10 @@
   <div>
     <table>
       <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
+        <th :key="header.name" v-for="header of options.headers">{{ header.title }}</th>
       </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
+      <tr :key="row" v-for="row of state">
+        <td :key="header.name" v-for="header of options.headers">{{ row[header.name] }}</td>
       </tr>
     </table>
   </div>
@@ -25,8 +16,19 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: "VueTable",
+  props: {
+    state: {
+      required: true,
+    },
+    options: {
+      type: Object,
+      required: true
+    }
+  },
   setup() {
-    return {}
+    return {
+
+    }
   }
 })
 </script>
