@@ -24,6 +24,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  name: "VueTable",
   setup() {
     return {}
   }
