@@ -7,7 +7,8 @@ const { load, state, options } = useTable({
   headers: [
     {
       name: "test1",
-      title: "Column title 1"
+      title: "Column title 1",
+      class: 'headerCustom'
     },
     {
       name: "test2",
@@ -23,7 +24,7 @@ const { load, state, options } = useTable({
 onMounted(() => {
   load(
     [{
-      test1: "This is a test 1 1",
+      test1: "This is a test 1 1 asda sdasd asdasd as d",
       test2: "This is a test 1 2",
       test3: "This is a test 1 3"
     },
@@ -42,8 +43,12 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .container {
   padding: 1.5em;
+}
+
+.headerCustom {
+  background-color: blue;
 }
 </style>
