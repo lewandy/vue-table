@@ -4,15 +4,21 @@
 
 import { ref } from "vue"
 
-type Header = {
+type HeaderOption = {
   width?: number,
   name: string,
   title: string,
   class?: string
 }
 
-type VueTableConfiguration = {
-  headers: Header[]
+type ApiOption = {
+
+}
+
+export type VueTableConfiguration = {
+  headers: HeaderOption[],
+  api?: ApiOption,
+  styleAdapter?: []
 }
 
 export function useTable(options: VueTableConfiguration) {
