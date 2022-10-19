@@ -1,19 +1,24 @@
 <template>
   <table>
-    <tr>
-      <th :key="header.name" :class="header.class ?? false" v-for="header of options.headers">{{ header.title }}
-      </th>
-    </tr>
-    <tr :key="row" v-for="row of state">
-      <td :key="header.name" v-for="header of options.headers">{{ row[header.name] }}
-      </td>
-    </tr>
+    <thead>
+      <tr>
+        <th scope="col" :key="header.name" :class="header.class ?? false" v-for="header of options.headers">{{
+        header.title }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr :key="row" v-for="row of state">
+        <td :key="header.name" v-for="header of options.headers">{{ row[header.name] }}
+        </td>
+      </tr>
+    </tbody>
   </table>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { VueTableConfiguration } from "../composables/useTable"
+import type { VueTableConfiguration } from "../types/useTable.types"
 
 export default defineComponent({
   name: "VueTable",

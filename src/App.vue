@@ -7,8 +7,7 @@ const { load, state, options } = useTable({
   headers: [
     {
       name: "test1",
-      title: "Column title 1",
-      class: 'headerCustom'
+      title: "Column title 1"
     },
     {
       name: "test2",
