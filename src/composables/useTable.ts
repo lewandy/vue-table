@@ -3,33 +3,29 @@
  */
 
 import { ref } from "vue"
+import type { TableUtilities, VueTableConfiguration } from "../types/useTable.types"
 
-type HeaderOption = {
-  width?: number,
-  name: string,
-  title: string,
-  class?: string
-}
-
-type ApiOption = {
-
-}
-
-export type VueTableConfiguration = {
-  headers: HeaderOption[],
-  api?: ApiOption,
-  styleAdapter?: []
-}
-
-export function useTable(options: VueTableConfiguration) {
+export function useTable(options: VueTableConfiguration): TableUtilities {
   const state = ref([])
 
   const load = (data: any): void => {
     state.value = data
   }
 
+  // TODO: Implement sort functionality
+  const sort = (sortBy: string) => {
+
+  }
+
+  // TODO: Implement filter functionality
+  const filter = (key: string, value: string | number) => {
+
+  }
+
   return {
     load,
+    sort,
+    filter,
     state,
     options,
   }
