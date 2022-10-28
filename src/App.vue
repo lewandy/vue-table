@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import Table from './components/VueTable.vue';
-import { useTable } from './composables/useTable';
+import { onMounted, ref } from 'vue';
+import VueTable from './components/VueTable.vue';
+import { VueTableConfiguration } from './types/types';
 
-const { load, state, options } = useTable({
+const data = ref();
+
+const tableOptions: VueTableConfiguration = {
   headers: [
     {
       name: "test1",
@@ -18,27 +20,26 @@ const { load, state, options } = useTable({
       title: "Column title 3"
     }
   ]
-})
+};
 
 onMounted(() => {
-  load(
-    [{
-      test1: "This is a test 1 1 asda sdasd asdasd as d",
-      test2: "This is a test 1 2",
-      test3: "This is a test 1 3"
-    },
-    {
-      test1: "This is a test 2 1",
-      test2: "This is a test 2 2",
-      test3: "This is a test 2 3"
-    }
-    ])
+  data.value = [{
+    test1: "This is a test 1 1 asda sdasd asdasd as d",
+    test2: "This is a test 1 2",
+    test3: "This is a test 1 3"
+  },
+  {
+    test1: "This is a test 2 1",
+    test2: "This is a test 2 2",
+    test3: "This is a test 2 3"
+  }
+  ]
 })
 </script>
 
 <template>
   <div class="container">
-    <Table :options="options" :state="state" />
+    <VueTable class="table" :options="tableOptions" :state="data" />
   </div>
 </template>
 

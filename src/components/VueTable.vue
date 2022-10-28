@@ -3,7 +3,8 @@
     <thead>
       <tr>
         <th scope="col" :key="header.name" :class="header.class ?? false" v-for="header of options.headers">{{
-        header.title }}
+            header.title
+        }}
         </th>
       </tr>
     </thead>
@@ -18,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import type { VueTableConfiguration } from "../types/useTable.types"
+import type { VueTableConfiguration } from "../types/types"
 
 export default defineComponent({
   name: "VueTable",
@@ -38,7 +39,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped>
-
-</style>
