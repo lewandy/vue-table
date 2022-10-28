@@ -3,21 +3,21 @@ import { onMounted, ref } from 'vue';
 import VueTable from './components/VueTable.vue';
 import { VueTableConfiguration } from './types/types';
 
-const data = ref();
+const data = ref<Array<any>>([]);
 
 const tableOptions: VueTableConfiguration = {
   headers: [
     {
       name: "test1",
-      title: "Column title 1"
+      title: "Header 1"
     },
     {
       name: "test2",
-      title: "Column title 2"
+      title: "Header 2"
     },
     {
       name: "test3",
-      title: "Column title 3"
+      title: "Header 3"
     }
   ]
 };
