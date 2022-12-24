@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import VueTable from './components/VueTable.vue';
-import { VueTableConfiguration } from './types/types';
+import { VueTableOptions } from './types/types';
 
 const data = ref<Array<any>>([]);
 
-const tableOptions: VueTableConfiguration = {
+const tableOptions: VueTableOptions = {
   headers: [
     {
       name: "test1",

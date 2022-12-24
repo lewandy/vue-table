@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import type { VueTableConfiguration } from "../types/types"
+import type { VueTableOptions } from "../types/types"
 
 export default defineComponent({
   name: "VueTable",
@@ -36,7 +36,7 @@ export default defineComponent({
       required: true,
     },
     options: {
-      type: Object as PropType<VueTableConfiguration>,
+      type: Object as PropType<VueTableOptions>,
       required: true
     }
   },

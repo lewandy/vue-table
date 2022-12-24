@@ -7,7 +7,7 @@ export type HeaderOption = {
 
 export type TableUtilities = {
   state: any,
-  options: VueTableConfiguration,
+  options: VueTableOptions,
   load: Function,
   sort: Function,
   filter: Function
@@ -18,7 +18,7 @@ export type ApiOption = {
 
 }
 
-export type VueTableConfiguration = {
+export type VueTableOptions = {
   headers: HeaderOption[],
   api?: ApiOption,
   styleAdapter?: []
